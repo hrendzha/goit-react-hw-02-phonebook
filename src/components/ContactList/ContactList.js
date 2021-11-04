@@ -8,9 +8,10 @@ function ContactList({ contacts, onContactDelete }) {
             {contacts.map(({ id, name, number }) => (
                 <li className={s.listItem} key={id}>
                     <ContactListItem
+                        id={id}
                         name={name}
                         number={number}
-                        onClick={() => onContactDelete(id)}
+                        onClick={onContactDelete}
                     />
                 </li>
             ))}
@@ -24,7 +25,6 @@ ContactList.propTypes = {
             id: PropTypes.string.isRequired,
         }).isRequired,
     ).isRequired,
-    onContactDelete: PropTypes.func.isRequired,
 };
 
 export default ContactList;
